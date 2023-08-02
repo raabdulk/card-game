@@ -80,6 +80,7 @@ a {
 }
 
 .level-numbers {
+ 
   margin-top: 48px;
   display: flex;
   flex-direction: row;
@@ -90,6 +91,7 @@ a {
 }
 
 .level-numbers-box {
+  
   border-radius: 12px;
 
   display: flex;
@@ -130,4 +132,9 @@ a {
   font-weight: 400;
   line-height: 32px;
   /* 133.333% */
+}
+
+.selected {
+  background-color: #666;
+  color: white;
 }
