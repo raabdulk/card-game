@@ -1,0 +1,274 @@
+@font-face {
+    font-family: StratosSkyeng;
+    src: url('../fonts/Stratos/stratosskyengweb-black.woff2'),
+        url('../fonts/Stratos/stratosskyengweb-black.woff'),
+        url('../fonts/Stratos/stratosskyengweb-blackitalic.woff2'),
+        url('../fonts/Stratos/stratosskyengweb-blackitalic.woff'),
+        url('../fonts/Stratos/stratosskyengweb-bolditalic.woff2'),
+        url('../fonts/Stratos/stratosskyengweb-bolditalic.woff'),
+        url('../fonts/Stratos/stratosskyengweb-extrabold.woff2'),
+        url('../fonts/Stratos/stratosskyengweb-extrabold.woff'),
+        url('../fonts/Stratos/stratosskyengweb-extrabolditalic.woff2'),
+        url('../fonts/Stratos/stratosskyengweb-extrabolditalic.woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: StratosSkyeng;
+    src: url('../fonts/Stratos/stratosskyengweb-regular.woff2'),
+        url('../fonts/Stratos/stratosskyengweb-regular.woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: StratosSkyeng, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 49px;
+
+    /* padding: 158px 272px 157px; */
+
+    background: var(--blue-120, #004980);
+}
+
+.level {
+    margin: 150px 262px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 480px;
+    height: 459px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: #c2f5ff;
+}
+
+.level-text {
+    margin: 52px 136px 0;
+    color: #004980;
+    text-align: center;
+
+    /* Pres → Text M */
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+
+    /* 120% */
+}
+
+.level-numbers {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 67px;
+}
+
+.level-numbers input[type='radio'] {
+    margin-top: 48px;
+    gap: 26px;
+    font-weight: 400;
+    display: none;
+}
+
+.level-numbers label {
+    cursor: pointer;
+}
+
+.level-numbers label:hover {
+    background-color: #d0ffb7;
+    border: 1px solid #1ca92e;
+}
+
+.level-numbers input[type='radio']:checked + label {
+    background-color: #d0ffb7;
+    border: 1px solid #1ca92e;
+}
+
+.level-numbers-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 48px;
+    width: 97px;
+    height: 98px;
+    background-color: #fff;
+    color: var(--blue-100, #0080c1);
+    text-align: center;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+}
+
+.level-button,
+.again {
+    display: flex;
+    width: 246px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #7ac100;
+    border-width: 0;
+    color: #fff;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+
+    /* 133.333% */
+}
+
+/* Игровое поле */
+.header-row {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+.header-time {
+    display: grid;
+    grid-template-columns: 85px 75px;
+}
+
+.header-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 48px;
+    margin-top: 52px;
+}
+
+.time-text {
+    color: #fff;
+    align-self: flex-end;
+    padding-left: 41px;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+}
+
+.time-number {
+    color: #fff;
+
+    /* Pres → Text XL */
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px; /* 112.5% */
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 15px;
+    grid-column: 1 / 3;
+}
+
+.closed-card {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/shirt.png');
+}
+
+/* Карты масти */
+
+.spades-ace {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/туз\ пики.jpg');
+}
+
+.spades-king {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/король\ пики.jpg');
+}
+
+.spades-queen {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/дама\ пики.jpg');
+}
+
+.spades-jack {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/валет\ пики.jpg');
+}
+
+.spades-10 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/10\ пики.jpg');
+}
+
+.spades-9 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/9\ пики.jpg');
+}
+
+.spades-8 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/8\ пики.jpg');
+}
+
+.spades-7 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/7\ пики.jpg');
+}
+
+.spades-6 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/6\ пики.jpg');
+}
