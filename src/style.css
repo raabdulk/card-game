@@ -201,6 +201,8 @@ a {
 
 /* Карты масти */
 
+/* Пики */
+
 .spades-ace {
     padding: 10px;
     width: 95px;
@@ -271,4 +273,226 @@ a {
     height: 133px;
     border-radius: 4px;
     background-image: url('../img/cards/6\ пики.jpg');
+}
+
+/* Сердце */
+
+.hearts-ace {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/туз\ черви.jpg');
+}
+
+.hearts-king {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/король\ черви.jpg');
+}
+
+.hearts-queen {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/дама\ черви.jpg');
+}
+
+.hearts-jack {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/валет\ черви.jpg');
+}
+
+.hearts-10 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/10\ черви.jpg');
+}
+
+.hearts-9 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/9\ черви.jpg');
+}
+
+.hearts-8 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/8\ черви.jpg');
+}
+
+.hearts-7 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/7\ черви.jpg');
+}
+
+.hearts-6 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/6\ черви.jpg');
+}
+
+/* Пики */
+
+.diamonds-ace {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/туз\ бубны.jpg');
+}
+
+.diamonds-king {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/король\ бубны.jpg');
+}
+
+.diamonds-queen {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/дама\ бубны.jpg');
+}
+
+.diamonds-jack {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/валет\ бубны.jpg');
+}
+
+.diamonds-10 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/10\ бубны.jpg');
+}
+
+.diamonds-9 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/9\ бубны.jpg');
+}
+
+.diamonds-8 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/8\ бубны.jpg');
+}
+
+.diamonds-7 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/7\ бубны.jpg');
+}
+
+.diamonds-6 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/6\ бубны.jpg');
+}
+
+/* Кресты */
+
+.clubs-ace {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/туз\ крести.jpg');
+}
+
+.clubs-king {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/король\ крести.jpg');
+}
+
+.clubs-queen {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/дама\ крести.jpg');
+}
+
+.clubs-jack {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/валет\ крести.jpg');
+}
+
+.clubs-10 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/10\ крести.jpg');
+}
+
+.clubs-9 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/9\ крести.jpg');
+}
+
+.clubs-8 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/8\ крести.jpg');
+}
+
+.clubs-7 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/7\ крести.jpg');
+}
+
+.clubs-6 {
+    padding: 10px;
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background-image: url('../img/cards/6\ крести.jpg');
 }
