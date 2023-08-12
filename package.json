@@ -6,14 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write ./src/",
+    "formatwebconf": "npx prettier --write webpack.config.js",
     "lint:js": "eslint ./src/**/*.js",
-    "lint:css": "stylelint ./src/**/*.css"
+    "lint:css": "stylelint ./src/**/*.css",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",

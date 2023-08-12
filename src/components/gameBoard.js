@@ -1,4 +1,4 @@
-import { appEl, cardsArray, cardsArrayResult } from '../index.js';
+import { appEl, cardsArray } from '../index.js';
 
 //Функция рисует разметку с закрытыми картами
 export const renderCardsClosed = () => {
@@ -60,9 +60,11 @@ export const renderCardsClosed = () => {
 
 //Функция рисует открытые карты с помощью метода map который проходит по массиву cardsArray
 export const renderCardsOpen = () => {
-    const appHtml = cardsArray.map((card) => {
-        return `<div class=${card}></div>`;
-    }).join('');
+    const appHtml = cardsArray
+        .map((card) => {
+            return `<div class=${card}></div>`;
+        })
+        .join('');
 
     const containerHtml = `<div class="container">
     <div class="header-row">
