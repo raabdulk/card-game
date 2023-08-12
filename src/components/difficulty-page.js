@@ -1,5 +1,4 @@
 import { appEl } from '../index.js';
-
 export let difficulty = null;
 
 export const renderDifficulty = () => {
@@ -8,7 +7,6 @@ export const renderDifficulty = () => {
     <div class="level">
         <p class="level-text">Выбери сложность</p>
         <div class="level-numbers">
-
             <input type="radio" id="easy" name="level">
             <label for="easy" class="level-numbers-box">1</label>
 

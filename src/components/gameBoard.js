@@ -60,7 +60,7 @@ export const renderCardsClosed = () => {
 
 //Функция рисует открытые карты с помощью метода map который проходит по массиву cardsArray
 export const renderCardsOpen = () => {
-    const appHtml = cardsArray.map((card, index) => {
+    const appHtml = cardsArray.map((card) => {
         return `<div class=${card}></div>`;
     }).join('');
 
