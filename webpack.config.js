@@ -28,7 +28,7 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: 'static', to: 'static' }],
+            patterns: [{ from: 'img', to: 'static' }],
         }),
         new HtmlWebpackPlugin({
             template: './index.html',
