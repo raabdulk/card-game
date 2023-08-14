@@ -1,5 +1,5 @@
-import { renderCardsClosed } from './components/gameBoard.js';
-// import { renderCardsOpen } from './components/gameBoard.js';
+// import { renderCardsClosed } from './components/gameBoard.js';
+import { renderCardsOpen } from './components/gameBoard.js';
 // import { renderDifficulty } from './components/difficulty-page.js';
 export let globalState = null;
 
@@ -91,4 +91,4 @@ export const cardsArrayResult = [
     'clubs-6',
 ];
 
-renderCardsClosed();
+renderCardsOpen();
