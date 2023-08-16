@@ -1,4 +1,30 @@
-import { appEl, cardsArray } from '../index.js';
+import { appEl, cardsArray, cardsArrayResult } from '../index.js';
+import { difficulty } from './difficulty-page.js';
+
+let cardsCount = null;
+
+export const renderGameBoard = () => {
+    if (difficulty === 'easy') {
+        cardsCount = 6;
+
+        for (let i = 1; i <= cardsCount; i++) {
+            cardsArrayResult.push();
+        }
+
+        console.log('Легкий уровень');
+
+        return;
+    }
+    if (difficulty === 'medium') {
+        cardsCount = 12;
+        console.log('Средний ровень');
+        return;
+    } else {
+        cardsCount = 18;
+        console.log('Сложный ровень', cardsCount);
+        return;
+    }
+};
 
 //Функция рисует разметку с закрытыми картами
 export const renderCardsClosed = () => {
@@ -84,3 +110,6 @@ export const renderCardsOpen = () => {
 
     appEl.innerHTML = containerHtml;
 };
+
+//Функция исходя из сложности уровня рисует 6, 12 или 18 карт и перемешивает их
+export const renderCardsGenerator = () => {};
