@@ -5,10 +5,12 @@ import {
     cardsArrayResult2,
 } from '../index.js';
 import { difficulty } from './difficulty-page.js';
+import { logicOfGame } from './logicOfGame.js';
 
 let cardsCount = null;
 
 export const renderGameBoard = () => {
+    //условие для легкого уровня
     if (difficulty === 'easy') {
         cardsCount = 3;
 
@@ -57,8 +59,21 @@ export const renderGameBoard = () => {
             </div>
         </div>`;
         appEl.innerHTML = containerHtml;
+
+        // Закрываем карты спустя 5 сек
+        let closingCards = () => {
+            let newClass = document.getElementById('card');
+            newClass.classList.add('closed-card');
+            console.log('setTimeout');
+        };
+
+        setTimeout(closingCards, 1000);
+        //Логика игры
+        logicOfGame();
+
         return;
     }
+    //условие для среднего уровня
     if (difficulty === 'medium') {
         cardsCount = 6;
 
@@ -109,7 +124,9 @@ export const renderGameBoard = () => {
 
         appEl.innerHTML = containerHtml;
         return;
-    } else {
+    }
+    // условие для сложного уровня
+    else {
         cardsCount = 9;
 
         let i = 0;
