@@ -1,5 +1,5 @@
 // import { renderCardsClosed } from './components/gameBoard.js';
-import { renderCardsOpen } from './components/gameBoard.js';
+// import { renderCardsOpen } from './components/gameBoard.js';
 import { renderDifficulty } from './components/difficulty-page.js';
 import './style.css';
 export let globalState = null;
@@ -49,7 +49,10 @@ export const cardsArray = [
     'clubs-6',
 ];
 
-// Массив мастей и значений карт (36 карт) после перемешивания
+// Массив мастей и значений карт без пар
 export const cardsArrayResult = [];
+
+// Массив мастей и значений карт с парами
+export const cardsArrayResult2 = [];
 
 renderDifficulty();

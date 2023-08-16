@@ -40,7 +40,6 @@ export const renderDifficulty = () => {
 
     const startButton = document.getElementById('Start');
     startButton.addEventListener('click', () => {
-        console.log('Поехали');
         renderGameBoard();
     });
 };

@@ -1,26 +1,164 @@
-import { appEl, cardsArray, cardsArrayResult } from '../index.js';
+import {
+    appEl,
+    cardsArray,
+    cardsArrayResult,
+    cardsArrayResult2,
+} from '../index.js';
 import { difficulty } from './difficulty-page.js';
 
 let cardsCount = null;
 
 export const renderGameBoard = () => {
     if (difficulty === 'easy') {
-        cardsCount = 6;
+        cardsCount = 3;
 
-        for (let i = 1; i <= cardsCount; i++) {
-            cardsArrayResult.push();
-        }
+        let i = 0;
+        do {
+            let addedEl =
+                cardsArray[Math.floor(Math.random() * cardsArray.length)];
 
-        console.log('Легкий уровень');
+            if (cardsArrayResult.includes(addedEl)) {
+                console.log('Ничего');
+            } else {
+                cardsArrayResult.push(addedEl);
+            }
+            i++;
+        } while (cardsArrayResult.length !== cardsCount);
+        console.log(cardsArrayResult.length);
 
+        cardsArrayResult2.push(...cardsArrayResult);
+        cardsArrayResult.push(...cardsArrayResult2);
+
+        let cardsArrayResultResult = cardsArrayResult.sort(
+            () => Math.random() - 0.5,
+        );
+
+        console.log(cardsArrayResultResult);
+
+        const appHtml = cardsArrayResult
+            .map((card) => {
+                return `<div class=${card} id='card'></div>`;
+            })
+            .join('');
+
+        const containerHtml = `<div class="container">
+            <div class="header-row">
+                <div class="header-time">
+                    <div class="time-text">min</div> 
+                    <div class="time-text">sek</div> 
+                    <div class="time-number">00.</div> 
+                    <div class="time-number">00</div> 
+                </div>
+                
+                <div class="header-button">
+                    <button class="again" id="again">Начать заново</button>
+                </div>
+                <div class="cards-container">${appHtml}</div>
+            </div>
+        </div>`;
+        appEl.innerHTML = containerHtml;
         return;
     }
     if (difficulty === 'medium') {
-        cardsCount = 12;
-        console.log('Средний ровень');
+        cardsCount = 6;
+
+        let i = 0;
+        do {
+            let addedEl =
+                cardsArray[Math.floor(Math.random() * cardsArray.length)];
+
+            if (cardsArrayResult.includes(addedEl)) {
+                console.log('Ничего');
+            } else {
+                cardsArrayResult.push(addedEl);
+            }
+            i++;
+        } while (i < cardsCount || cardsArrayResult.length < cardsCount);
+        console.log(cardsArrayResult.length);
+
+        cardsArrayResult2.push(...cardsArrayResult);
+        cardsArrayResult.push(...cardsArrayResult2);
+
+        let cardsArrayResultResult = cardsArrayResult.sort(
+            () => Math.random() - 0.5,
+        );
+
+        console.log(cardsArrayResultResult);
+
+        const appHtml = cardsArrayResult
+            .map((card) => {
+                return `<div class=${card} id='card'></div>`;
+            })
+            .join('');
+
+        const containerHtml = `<div class="container">
+            <div class="header-row">
+                <div class="header-time">
+                    <div class="time-text">min</div> 
+                    <div class="time-text">sek</div> 
+                    <div class="time-number">00.</div> 
+                    <div class="time-number">00</div> 
+                </div>
+                
+                <div class="header-button">
+                    <button class="again" id="again">Начать заново</button>
+                </div>
+                <div class="cards-container">${appHtml}</div>
+            </div>
+        </div>`;
+
+        appEl.innerHTML = containerHtml;
         return;
     } else {
-        cardsCount = 18;
+        cardsCount = 9;
+
+        let i = 0;
+        do {
+            let addedEl =
+                cardsArray[Math.floor(Math.random() * cardsArray.length)];
+
+            if (cardsArrayResult.includes(addedEl)) {
+                console.log('Ничего');
+            } else {
+                cardsArrayResult.push(addedEl);
+            }
+            i++;
+        } while (i < cardsCount || cardsArrayResult.length < cardsCount);
+        console.log(cardsArrayResult.length);
+
+        cardsArrayResult2.push(...cardsArrayResult);
+        cardsArrayResult.push(...cardsArrayResult2);
+
+        let cardsArrayResultResult = cardsArrayResult.sort(
+            () => Math.random() - 0.5,
+        );
+
+        console.log(cardsArrayResultResult);
+
+        const appHtml = cardsArrayResult
+            .map((card) => {
+                return `<div class=${card} id='card'></div>`;
+            })
+            .join('');
+
+        const containerHtml = `<div class="container">
+            <div class="header-row">
+                <div class="header-time">
+                    <div class="time-text">min</div> 
+                    <div class="time-text">sek</div> 
+                    <div class="time-number">00.</div> 
+                    <div class="time-number">00</div> 
+                </div>
+                
+                <div class="header-button">
+                    <button class="again" id="again">Начать заново</button>
+                </div>
+                <div class="cards-container">${appHtml}</div>
+            </div>
+        </div>`;
+
+        appEl.innerHTML = containerHtml;
+
         console.log('Сложный ровень', cardsCount);
         return;
     }
