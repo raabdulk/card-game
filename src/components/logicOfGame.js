@@ -1,14 +1,38 @@
-let open = false;
-let success = false;
+let opened = false;
+let firstCard, secondCard;
 
+//Открываем карту и присваиваем карте класс
+const flipCard = (e) => {
+    const target = e.target;
+
+    target.classList.remove('closed-card');
+    if (!opened) {
+        //Первый клик
+        opened = true;
+        firstCard = e.srcElement.className;
+    } else {
+        //Второй клик
+        opened = false;
+        secondCard = e.srcElement.className;
+
+        //Сравниваем
+        comparison();
+    }
+};
+
+//Функция сравнения
+const comparison = () => {
+    if (firstCard === secondCard) {
+        alert('Вы победили!');
+    } else {
+        alert('Вы проиграли');
+    }
+};
+
+//Навешиваем обработчик кликов на элементы с id='card'
 export const logicOfGame = () => {
-    console.log('Работает логика');
-    let cardLogic = document.getElementById('card');
-    cardLogic.addEventListener('click', () => {
-        console.log('Меня нажали');
-        if (open === false && success === false) {
-            cardLogic.classList.remove('closed-card');
-            open = true;
-        }
+    let cards = document.querySelectorAll('#card');
+    cards.forEach((card) => {
+        card.addEventListener('click', flipCard);
     });
 };

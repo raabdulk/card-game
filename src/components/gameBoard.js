@@ -14,7 +14,6 @@ export const renderGameBoard = () => {
     if (difficulty === 'easy') {
         cardsCount = 3;
 
-        let i = 0;
         do {
             let addedEl =
                 cardsArray[Math.floor(Math.random() * cardsArray.length)];
@@ -24,9 +23,7 @@ export const renderGameBoard = () => {
             } else {
                 cardsArrayResult.push(addedEl);
             }
-            i++;
         } while (cardsArrayResult.length !== cardsCount);
-        console.log(cardsArrayResult.length);
 
         cardsArrayResult2.push(...cardsArrayResult);
         cardsArrayResult.push(...cardsArrayResult2);
@@ -35,9 +32,7 @@ export const renderGameBoard = () => {
             () => Math.random() - 0.5,
         );
 
-        console.log(cardsArrayResultResult);
-
-        const appHtml = cardsArrayResult
+        const appHtml = cardsArrayResultResult
             .map((card) => {
                 return `<div class=${card} id='card'></div>`;
             })
@@ -62,12 +57,11 @@ export const renderGameBoard = () => {
 
         // Закрываем карты спустя 5 сек
         let closingCards = () => {
-            let newClass = document.getElementById('card');
-            newClass.classList.add('closed-card');
-            console.log('setTimeout');
+            let newClass = document.querySelectorAll('#card');
+            newClass.forEach((clas) => clas.classList.add('closed-card'));
         };
+        setTimeout(closingCards, 5000);
 
-        setTimeout(closingCards, 1000);
         //Логика игры
         logicOfGame();
 
@@ -77,7 +71,6 @@ export const renderGameBoard = () => {
     if (difficulty === 'medium') {
         cardsCount = 6;
 
-        let i = 0;
         do {
             let addedEl =
                 cardsArray[Math.floor(Math.random() * cardsArray.length)];
@@ -87,9 +80,7 @@ export const renderGameBoard = () => {
             } else {
                 cardsArrayResult.push(addedEl);
             }
-            i++;
-        } while (i < cardsCount || cardsArrayResult.length < cardsCount);
-        console.log(cardsArrayResult.length);
+        } while (cardsArrayResult.length !== cardsCount);
 
         cardsArrayResult2.push(...cardsArrayResult);
         cardsArrayResult.push(...cardsArrayResult2);
@@ -98,9 +89,7 @@ export const renderGameBoard = () => {
             () => Math.random() - 0.5,
         );
 
-        console.log(cardsArrayResultResult);
-
-        const appHtml = cardsArrayResult
+        const appHtml = cardsArrayResultResult
             .map((card) => {
                 return `<div class=${card} id='card'></div>`;
             })
@@ -123,13 +112,23 @@ export const renderGameBoard = () => {
         </div>`;
 
         appEl.innerHTML = containerHtml;
+
+        // Закрываем карты спустя 5 сек
+        let closingCards = () => {
+            let newClass = document.querySelectorAll('#card');
+            newClass.forEach((clas) => clas.classList.add('closed-card'));
+        };
+        setTimeout(closingCards, 5000);
+
+        //Логика игры
+        logicOfGame();
+
         return;
     }
     // условие для сложного уровня
     else {
         cardsCount = 9;
 
-        let i = 0;
         do {
             let addedEl =
                 cardsArray[Math.floor(Math.random() * cardsArray.length)];
@@ -139,8 +138,7 @@ export const renderGameBoard = () => {
             } else {
                 cardsArrayResult.push(addedEl);
             }
-            i++;
-        } while (i < cardsCount || cardsArrayResult.length < cardsCount);
+        } while (cardsArrayResult.length !== cardsCount);
         console.log(cardsArrayResult.length);
 
         cardsArrayResult2.push(...cardsArrayResult);
@@ -150,9 +148,7 @@ export const renderGameBoard = () => {
             () => Math.random() - 0.5,
         );
 
-        console.log(cardsArrayResultResult);
-
-        const appHtml = cardsArrayResult
+        const appHtml = cardsArrayResultResult
             .map((card) => {
                 return `<div class=${card} id='card'></div>`;
             })
@@ -176,7 +172,16 @@ export const renderGameBoard = () => {
 
         appEl.innerHTML = containerHtml;
 
-        console.log('Сложный ровень', cardsCount);
+        // Закрываем карты спустя 5 сек
+        let closingCards = () => {
+            let newClass = document.querySelectorAll('#card');
+            newClass.forEach((clas) => clas.classList.add('closed-card'));
+        };
+        setTimeout(closingCards, 5000);
+
+        //Логика игры
+        logicOfGame();
+
         return;
     }
 };
@@ -265,6 +270,3 @@ export const renderCardsOpen = () => {
 
     appEl.innerHTML = containerHtml;
 };
-
-//Функция исходя из сложности уровня рисует 6, 12 или 18 карт и перемешивает их
-export const renderCardsGenerator = () => {};
