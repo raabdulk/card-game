@@ -1,6 +1,6 @@
-import { appEl } from '../index.js';
-import { renderGameBoard } from './gameBoard.js';
-export let difficulty = null;
+import { appEl } from '../index';
+import { renderGameBoard } from './gameBoard';
+export let difficulty: string;
 
 export const renderDifficulty = () => {
     // Стартовая страница с выбором сложности и кнопкой Старт
@@ -23,25 +23,34 @@ export const renderDifficulty = () => {
 
 </div>`;
 
-    appEl.innerHTML = appHtml;
+    if (appEl) {
+        appEl.innerHTML = appHtml;
+    }
 
     const levels = ['easy', 'medium', 'hard'];
 
     // Перебираем уровни
-    levels.forEach((uroven) => {
-        const el = document.getElementById(uroven); // Создаем переменную, которая будет хранить в себе элемент с id уровня
+    levels.forEach((level) => {
+        let el: HTMLElement | null = document.getElementById(level); // Создаем переменную, которая будет хранить в себе элемент с id уровня
         // Навешиваем на него универсальный обработчик события
-        el.addEventListener('click', () => {
-            el.classList.add('selected');
-            difficulty = uroven;
-            console.log(difficulty);
-        });
+
+        if (el) {
+            el.addEventListener('click', () => {
+                if (el) {
+                    el.classList.add('selected');
+                    difficulty = level;
+                    console.log(difficulty);
+                }
+            });
+        }
     });
 
-    const startButton = document.getElementById('Start');
-    startButton.addEventListener('click', () => {
-        renderGameBoard();
-    });
+    let startButton: HTMLElement | null = document.getElementById('Start');
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            renderGameBoard();
+        });
+    }
 };
 
 export const renderPlayGround = () => {
@@ -50,5 +59,7 @@ export const renderPlayGround = () => {
     const appHtml = `
         <p class="level-text">Игровое поле</p>
         `;
-    appEl.innerHTML = appHtml;
+    if (appEl) {
+        appEl.innerHTML = appHtml;
+    }
 };

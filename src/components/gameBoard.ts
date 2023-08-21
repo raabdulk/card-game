@@ -3,11 +3,12 @@ import {
     cardsArray,
     cardsArrayResult,
     cardsArrayResult2,
-} from '../index.js';
-import { difficulty } from './difficulty-page.js';
-import { logicOfGame } from './logicOfGame.js';
+} from '../index';
+import { difficulty } from './difficultyPage';
+import { logicOfGame } from './logicOfGame';
+import { startTimer } from './timerForGame';
 
-let cardsCount = null;
+let cardsCount: number;
 
 export const renderGameBoard = () => {
     //условие для легкого уровня
@@ -15,7 +16,7 @@ export const renderGameBoard = () => {
         cardsCount = 3;
 
         do {
-            let addedEl =
+            let addedEl: string =
                 cardsArray[Math.floor(Math.random() * cardsArray.length)];
 
             if (cardsArrayResult.includes(addedEl)) {
@@ -41,10 +42,12 @@ export const renderGameBoard = () => {
         const containerHtml = `<div class="container">
             <div class="header-row">
                 <div class="header-time">
-                    <div class="time-text">min</div> 
+                    <div class="time-text">min</div>
+                    <div class="time-text"></div>  
                     <div class="time-text">sek</div> 
-                    <div class="time-number">00.</div> 
-                    <div class="time-number">00</div> 
+                    <div class="time-number interval minutes" id="time-min">00</div>
+                    <div class="time-number" id="time-min">.</div>
+                    <div class="time-number interval seconds" id="time-sec">00</div>
                 </div>
                 
                 <div class="header-button">
@@ -53,7 +56,10 @@ export const renderGameBoard = () => {
                 <div class="cards-container">${appHtml}</div>
             </div>
         </div>`;
-        appEl.innerHTML = containerHtml;
+
+        if (appEl) {
+            appEl.innerHTML = containerHtml;
+        }
 
         // Закрываем карты спустя 5 сек
         let closingCards = () => {
@@ -64,6 +70,7 @@ export const renderGameBoard = () => {
 
         //Логика игры
         logicOfGame();
+        setInterval(startTimer, 1000);
 
         return;
     }
@@ -98,10 +105,12 @@ export const renderGameBoard = () => {
         const containerHtml = `<div class="container">
             <div class="header-row">
                 <div class="header-time">
-                    <div class="time-text">min</div> 
+                    <div class="time-text">min</div>
+                    <div class="time-text"></div>  
                     <div class="time-text">sek</div> 
-                    <div class="time-number">00.</div> 
-                    <div class="time-number">00</div> 
+                    <div class="time-number interval minutes" id="time-min">00</div>
+                    <div class="time-number" id="time-min">.</div>
+                    <div class="time-number interval seconds" id="time-sec">00</div>
                 </div>
                 
                 <div class="header-button">
@@ -111,7 +120,9 @@ export const renderGameBoard = () => {
             </div>
         </div>`;
 
-        appEl.innerHTML = containerHtml;
+        if (appEl) {
+            appEl.innerHTML = containerHtml;
+        }
 
         // Закрываем карты спустя 5 сек
         let closingCards = () => {
@@ -122,6 +133,7 @@ export const renderGameBoard = () => {
 
         //Логика игры
         logicOfGame();
+        setInterval(startTimer, 1000);
 
         return;
     }
@@ -157,10 +169,12 @@ export const renderGameBoard = () => {
         const containerHtml = `<div class="container">
             <div class="header-row">
                 <div class="header-time">
-                    <div class="time-text">min</div> 
+                    <div class="time-text">min</div>
+                    <div class="time-text"></div>  
                     <div class="time-text">sek</div> 
-                    <div class="time-number">00.</div> 
-                    <div class="time-number">00</div> 
+                    <div class="time-number interval minutes" id="time-min">00</div>
+                    <div class="time-number" id="time-min">.</div>
+                    <div class="time-number interval seconds" id="time-sec">00</div>
                 </div>
                 
                 <div class="header-button">
@@ -170,7 +184,9 @@ export const renderGameBoard = () => {
             </div>
         </div>`;
 
-        appEl.innerHTML = containerHtml;
+        if (appEl) {
+            appEl.innerHTML = containerHtml;
+        }
 
         // Закрываем карты спустя 5 сек
         let closingCards = () => {
@@ -181,6 +197,7 @@ export const renderGameBoard = () => {
 
         //Логика игры
         logicOfGame();
+        setInterval(startTimer, 1000);
 
         return;
     }
@@ -193,8 +210,7 @@ export const renderCardsClosed = () => {
             <div class="header-time">
                 <div class="time-text">min</div> 
                 <div class="time-text">sek</div> 
-                <div class="time-number">00.</div> 
-                <div class="time-number">00</div> 
+                <div class="time-number">00.00</div> 
             </div>
             
             <div class="header-button">
@@ -241,7 +257,9 @@ export const renderCardsClosed = () => {
             </div>
         </div>
     </div>`;
-    appEl.innerHTML = appHtml;
+    if (appEl) {
+        appEl.innerHTML = appHtml;
+    }
 };
 
 //Функция рисует открытые карты с помощью метода map который проходит по массиву cardsArray
@@ -257,8 +275,7 @@ export const renderCardsOpen = () => {
         <div class="header-time">
             <div class="time-text">min</div> 
             <div class="time-text">sek</div> 
-            <div class="time-number">00.</div> 
-            <div class="time-number">00</div> 
+            <div class="time-number" id="time-number">00.00</div> 
         </div>
         
         <div class="header-button">
@@ -268,5 +285,39 @@ export const renderCardsOpen = () => {
     </div>
 </div>`;
 
-    appEl.innerHTML = containerHtml;
+    if (appEl) {
+        appEl.innerHTML = containerHtml;
+    }
+};
+
+export const renderYouWon = () => {
+    const appHtml = `<div class="container">
+                        <div class="column">
+                            <div class="column-icon"><img src="./img/celebration.png" alt="celebration"></div>
+                            <div class="column-alert">Вы выиграли!</div>
+                            <div class="column-text">Затраченное время:</div>
+                            <div class="column-time">01.20</div>
+                            <button class="column-button" id="Again">Играть снова</button>
+                        </div>
+                    </div>`;
+
+    if (appEl) {
+        appEl.innerHTML = appHtml;
+    }
+};
+
+export const renderYouLose = () => {
+    const appHtml = `<div class="container">
+                        <div class="column">
+                            <div class="column-icon"><img src="./img/dead.png" alt="celebration"></div>
+                            <div class="column-alert">Вы проиграли!</div>
+                            <div class="column-text">Затраченное время:</div>
+                            <div class="column-time">01.20</div>
+                            <button class="column-button" id="Again">Играть снова</button>
+                        </div>
+                    </div>`;
+
+    if (appEl) {
+        appEl.innerHTML = appHtml;
+    }
 };

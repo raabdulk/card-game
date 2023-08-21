@@ -152,7 +152,8 @@ a {
 
 .header-time {
     display: grid;
-    grid-template-columns: 85px 75px;
+    justify-items: center;
+    grid-template-columns: 85px 5px 75px;
 }
 
 .header-button {
@@ -496,4 +497,79 @@ a {
     height: 133px;
     border-radius: 4px;
     background-image: url('../img/shirt.png');
+}
+
+/* Экран уведомления о завершении игры */
+
+.column {
+    margin: 150px 262px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 480px;
+    height: 459px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: #c2f5ff;
+    padding-top: 26px;
+    padding-bottom: 50px;
+}
+
+.column-alert {
+    color: var(--blue-120, #004980);
+    font-variant-numeric: lining-nums proportional-nums;
+    margin-top: 9px;
+    margin-bottom: 28px;
+
+    /* Pres → Text M */
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px; /* 120% */
+}
+
+.column-text {
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+
+    /* Pres → Caption S */
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+}
+
+.column-time {
+    margin-top: 10px;
+    color: #000;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px; /* 112.5% */
+}
+
+.column-button {
+    margin-top: 40px;
+    display: flex;
+    width: 246px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #7ac100;
+    border-width: 0;
+    color: #fff;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+
+    /* 133.333% */
 }

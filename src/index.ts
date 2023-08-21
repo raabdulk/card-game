@@ -1,13 +1,13 @@
 // import { renderCardsClosed } from './components/gameBoard.js';
 // import { renderCardsOpen } from './components/gameBoard.js';
-import { renderDifficulty } from './components/difficulty-page.js';
+import { renderDifficulty } from './components/difficultyPage';
 import './style.css';
 export let globalState = null;
 
 export const appEl = document.getElementById('app'); // константа с элементом app в который рендерится приложение
 
 // Массив мастей и значений карт (36 карт)
-export const cardsArray = [
+export const cardsArray: string[] = [
     'spades-ace',
     'spades-king',
     'spades-queen',
@@ -50,9 +50,9 @@ export const cardsArray = [
 ];
 
 // Массив мастей и значений карт без пар
-export const cardsArrayResult = [];
+export const cardsArrayResult: string[] = [];
 
 // Массив мастей и значений карт с парами
-export const cardsArrayResult2 = [];
+export const cardsArrayResult2: string[] = [];
 
 renderDifficulty();
