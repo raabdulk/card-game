@@ -4,9 +4,15 @@ import {
     cardsArrayResult,
     cardsArrayResult2,
 } from '../index';
-import { difficulty } from './difficultyPage';
-import { logicOfGame } from './logicOfGame';
-import { startTimer } from './timerForGame';
+import { difficulty, renderDifficulty } from './difficultyPage';
+import { logicOfGame, stopTimer } from './logicOfGame';
+import {
+    forInterval,
+    startTimer,
+    stopInterval,
+    timerNull,
+    total,
+} from './timerForGame';
 
 let cardsCount: number;
 
@@ -66,13 +72,17 @@ export const renderGameBoard = () => {
             let newClass = document.querySelectorAll('#card');
             newClass.forEach((clas) => clas.classList.add('closed-card'));
         };
+
         setTimeout(closingCards, 5000);
 
         //Логика игры
         logicOfGame();
-        setInterval(startTimer, 1000);
+
+        //Запускаем таймер
+        forInterval();
 
         return;
+        //Конец условия для легкого уровня
     }
     //условие для среднего уровня
     if (difficulty === 'medium') {
@@ -133,7 +143,10 @@ export const renderGameBoard = () => {
 
         //Логика игры
         logicOfGame();
-        setInterval(startTimer, 1000);
+
+        if (stopTimer) {
+            setInterval(startTimer, 1000);
+        }
 
         return;
     }
@@ -197,7 +210,10 @@ export const renderGameBoard = () => {
 
         //Логика игры
         logicOfGame();
-        setInterval(startTimer, 1000);
+
+        if (stopTimer) {
+            setInterval(startTimer, 1000);
+        }
 
         return;
     }
@@ -296,13 +312,20 @@ export const renderYouWon = () => {
                             <div class="column-icon"><img src="./img/celebration.png" alt="celebration"></div>
                             <div class="column-alert">Вы выиграли!</div>
                             <div class="column-text">Затраченное время:</div>
-                            <div class="column-time">01.20</div>
+                            <div class="column-time">${total}</div>
                             <button class="column-button" id="Again">Играть снова</button>
                         </div>
                     </div>`;
 
     if (appEl) {
         appEl.innerHTML = appHtml;
+    }
+
+    let playAgain: HTMLElement | null = document.getElementById('Again');
+    if (playAgain) {
+        playAgain.addEventListener('click', () => {
+            renderDifficulty();
+        });
     }
 };
 
@@ -312,12 +335,19 @@ export const renderYouLose = () => {
                             <div class="column-icon"><img src="./img/dead.png" alt="celebration"></div>
                             <div class="column-alert">Вы проиграли!</div>
                             <div class="column-text">Затраченное время:</div>
-                            <div class="column-time">01.20</div>
+                            <div class="column-time">${total}</div>
                             <button class="column-button" id="Again">Играть снова</button>
                         </div>
                     </div>`;
 
     if (appEl) {
         appEl.innerHTML = appHtml;
+    }
+
+    let playAgain: HTMLElement | null = document.getElementById('Again');
+    if (playAgain) {
+        playAgain.addEventListener('click', () => {
+            renderDifficulty();
+        });
     }
 };

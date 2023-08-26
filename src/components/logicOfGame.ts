@@ -1,7 +1,13 @@
+import { guessedCards, cardsArrayResult, arreysNull } from '../index';
+import { renderYouLose, renderYouWon } from './gameBoard';
+import { stopInterval, forInterval } from './timerForGame';
+import { timerNull } from './timerForGame';
+
 let opened = false;
 let firstCard, secondCard;
 let boardLocked = false;
 let classSelector;
+export let stopTimer: boolean = false;
 
 //Открываем карту и присваиваем карте класс
 const flipCard = (e) => {
@@ -29,8 +35,9 @@ const flipCard = (e) => {
 
 //Функция сравнения
 const comparison = () => {
-    if (firstCard.classList.value == secondCard.classList.value) {
+    if (firstCard.classList.value === secondCard.classList.value) {
         alert('Победа');
+        pushGuessedCards();
     } else {
         boardLocked = true;
         setTimeout(() => {
@@ -38,8 +45,9 @@ const comparison = () => {
             secondCard.classList.add('closed-card');
             boardLocked = false;
             classSelector = document.querySelectorAll('closed-card');
-            console.log('classSelector:', classSelector);
         }, 1000);
+        renderYouLose();
+        arreysNull();
     }
 };
 
@@ -49,4 +57,19 @@ export const logicOfGame = () => {
     cards.forEach((card) => {
         card.addEventListener('click', flipCard);
     });
+};
+
+//Заполнение массива отгаданных карт
+const pushGuessedCards = () => {
+    guessedCards.push(firstCard.classList.value);
+    guessedCards.push(secondCard.classList.value);
+    console.log('Массив отгаданных карт:', guessedCards);
+
+    if (cardsArrayResult.length === guessedCards.length) {
+        console.log('Запускаем уведомление');
+        stopInterval({ forInterval });
+        renderYouWon();
+        stopTimer = true;
+        arreysNull();
+    }
 };

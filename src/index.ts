@@ -50,9 +50,19 @@ export const cardsArray: string[] = [
 ];
 
 // Массив мастей и значений карт без пар
-export const cardsArrayResult: string[] = [];
+export let cardsArrayResult: string[] = [];
 
 // Массив мастей и значений карт с парами
-export const cardsArrayResult2: string[] = [];
+export let cardsArrayResult2: string[] = [];
+
+// Массив отгаданных карт
+export let guessedCards: string[] = [];
+
+//Функция обнуления массивов
+export const arreysNull = () => {
+    cardsArrayResult = [];
+    cardsArrayResult2 = [];
+    guessedCards = [];
+};
 
 renderDifficulty();
