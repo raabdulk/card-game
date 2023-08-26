@@ -1,15 +1,11 @@
 import { guessedCards, cardsArrayResult, arreysNull } from '../index';
 import { renderYouLose, renderYouWon } from './gameBoard';
-import { stopInterval, forInterval } from './timerForGame';
-import { timerNull } from './timerForGame';
 
 let opened = false;
 let firstCard, secondCard;
 let boardLocked = false;
 let classSelector;
 export let stopTimer: boolean = false;
-
-// export let stopTimerFalse = () => (stopTimer = false);
 
 //Открываем карту и присваиваем карте класс
 const flipCard = (e) => {

@@ -9,8 +9,10 @@
         "formatwebconf": "npx prettier --write webpack.config.ts",
         "lint:js": "eslint ./src/**/*.ts",
         "lint:css": "stylelint ./src/**/*.css",
+        "lint": "npm run lint:js && npm run lint:css",
         "build": "cross-env NODE_ENV=production webpack",
-        "start": "webpack-dev-server --open"
+        "start": "webpack-dev-server --open",
+        "prepare": "husky install"
     },
     "keywords": [],
     "author": "",
@@ -24,6 +26,7 @@
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-prettier": "^5.0.0",
         "html-webpack-plugin": "^5.5.3",
+        "husky": "^8.0.3",
         "mini-css-extract-plugin": "^2.7.6",
         "prettier": "^3.0.1",
         "stylelint": "^15.10.2",
