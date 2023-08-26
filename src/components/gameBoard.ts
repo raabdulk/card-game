@@ -5,16 +5,8 @@ import {
     cardsArrayResult2,
 } from '../index';
 import { difficulty, renderDifficulty } from './difficultyPage';
-import { logicOfGame, stopTimer } from './logicOfGame';
-import {
-    forInterval,
-    startTimer,
-    stopInterval,
-    stopTimerFunc,
-    timerNull,
-    total,
-} from './timerForGame';
-
+import { logicOfGame } from './logicOfGame';
+import { forInterval, stopTimerFunc, timerNull, total } from './timerForGame';
 let cardsCount: number;
 
 export const renderGameBoard = () => {

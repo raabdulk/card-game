@@ -4,7 +4,7 @@ import { renderYouLose, renderYouWon } from './gameBoard';
 let opened = false;
 let firstCard, secondCard;
 let boardLocked = false;
-let classSelector;
+// let classSelector;
 export let stopTimer: boolean = false;
 
 //Открываем карту и присваиваем карте класс
@@ -42,7 +42,7 @@ const comparison = () => {
             firstCard.classList.add('closed-card');
             secondCard.classList.add('closed-card');
             boardLocked = false;
-            classSelector = document.querySelectorAll('closed-card');
+            // classSelector = document.querySelectorAll('closed-card');
         }, 1000);
         renderYouLose();
         arreysNull();
@@ -65,7 +65,6 @@ const pushGuessedCards = () => {
 
     if (cardsArrayResult.length === guessedCards.length) {
         console.log('Запускаем уведомление');
-        // stopInterval({ forInterval });
         renderYouWon();
         stopTimer = true;
         arreysNull();
