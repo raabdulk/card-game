@@ -9,6 +9,8 @@ let boardLocked = false;
 let classSelector;
 export let stopTimer: boolean = false;
 
+// export let stopTimerFalse = () => (stopTimer = false);
+
 //Открываем карту и присваиваем карте класс
 const flipCard = (e) => {
     if (boardLocked) return;
@@ -67,9 +69,10 @@ const pushGuessedCards = () => {
 
     if (cardsArrayResult.length === guessedCards.length) {
         console.log('Запускаем уведомление');
-        stopInterval({ forInterval });
+        // stopInterval({ forInterval });
         renderYouWon();
         stopTimer = true;
         arreysNull();
+        stopTimer = false;
     }
 };

@@ -49,7 +49,12 @@ module.exports = {
             : 'source-map',
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: 'img', to: 'static' }],
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'img'),
+                    to: path.resolve(__dirname, 'dist/img'),
+                },
+            ],
         }),
         new HtmlWebpackPlugin({
             template: './index.html',

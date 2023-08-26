@@ -22,10 +22,13 @@ export const startTimer = () => {
 
     if (seconds > 59) {
         minutes++;
+        seconds = 0;
         if (minutesBlock) {
             minutesBlock.textContent = '0' + minutes;
         }
-        seconds = 0;
+        if (secondsBlock) {
+            secondsBlock.textContent = '00';
+        }
     }
 
     if (minutes > 9) {
@@ -42,9 +45,7 @@ export const startTimer = () => {
 };
 
 //Запускаем таймер каждую 1 сек и кладем интервал в переменную
-export let forInterval = () => {
-    setInterval(startTimer, 1000);
-};
+export let forInterval = setInterval(() => startTimer(), 1000);
 
 //Функция для остановки интервала
 export let stopInterval = ({ forInterval }) => {

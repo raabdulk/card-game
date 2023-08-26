@@ -10,6 +10,7 @@ import {
     forInterval,
     startTimer,
     stopInterval,
+    stopTimerFunc,
     timerNull,
     total,
 } from './timerForGame';
@@ -17,6 +18,7 @@ import {
 let cardsCount: number;
 
 export const renderGameBoard = () => {
+    timerNull();
     //условие для легкого уровня
     if (difficulty === 'easy') {
         cardsCount = 3;
@@ -79,7 +81,10 @@ export const renderGameBoard = () => {
         logicOfGame();
 
         //Запускаем таймер
-        forInterval();
+        forInterval;
+
+        //Останавливаем таймер при условии
+        stopTimerFunc();
 
         return;
         //Конец условия для легкого уровня
@@ -144,11 +149,14 @@ export const renderGameBoard = () => {
         //Логика игры
         logicOfGame();
 
-        if (stopTimer) {
-            setInterval(startTimer, 1000);
-        }
+        //Запускаем таймер
+        forInterval;
+
+        //Останавливаем таймер при условии
+        stopTimerFunc();
 
         return;
+        //Конец условия для среднего уровня
     }
     // условие для сложного уровня
     else {
@@ -211,11 +219,14 @@ export const renderGameBoard = () => {
         //Логика игры
         logicOfGame();
 
-        if (stopTimer) {
-            setInterval(startTimer, 1000);
-        }
+        //Запускаем таймер
+        forInterval;
+
+        //Останавливаем таймер при условии
+        stopTimerFunc();
 
         return;
+        //Конец условия для легкого уровня
     }
 };
 
