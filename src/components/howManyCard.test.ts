@@ -1,6 +1,7 @@
+const { it } = require('@jest/globals');
 import { howManyCards } from './howManyCard';
 
-{
+it('should check the number of cards', () => {
     //Подготовка
     const value = 'easy';
 
@@ -9,4 +10,4 @@ import { howManyCards } from './howManyCard';
 
     //Сверка
     result === 6 || 12 || 18;
-}
+});
