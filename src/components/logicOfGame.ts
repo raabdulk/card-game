@@ -13,7 +13,6 @@ const flipCard = (e) => {
     const target = e.target;
 
     if (target === firstCard) return;
-    console.log(target);
 
     target.classList.remove('closed-card');
     if (!opened) {
@@ -33,7 +32,6 @@ const flipCard = (e) => {
 //Функция сравнения
 const comparison = () => {
     if (firstCard.classList.value === secondCard.classList.value) {
-        alert('Победа');
         pushGuessedCards();
     } else {
         boardLocked = true;
