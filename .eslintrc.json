@@ -1,4 +1,32 @@
 {
+    // Добавил из https://stackoverflow.com/questions/62535621/typescript-casting-with-babel-eslint-parsing
+
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+
+    "plugins": ["@typescript-eslint", "eslint-plugin-node"],
+
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+
+    "rules": {
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "always-multiline"
+            }
+        ]
+    },
+
+    //Конец того что добавил из https://stackoverflow.com/questions/62535621/typescript-casting-with-babel-eslint-parsing
+
     "env": {
         "browser": true,
         "es6": true,
@@ -8,10 +36,15 @@
     "plugins": ["prettier"],
     "parserOptions": {
         "ecmaVersion": 2020,
-        "sourceType": "module",
+        "sourceType": "module"
     },
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
         "camelcase": ["error"],
         "eqeqeq": ["error", "always"]
     }
